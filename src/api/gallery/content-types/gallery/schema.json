@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galleries",
+  "info": {
+    "singularName": "gallery",
+    "pluralName": "galleries",
+    "displayName": "Gallery",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Slide": {
+      "displayName": "Slide",
+      "type": "component",
+      "repeatable": true,
+      "component": "gallery.slide"
+    },
+    "uid": {
+      "type": "customField",
+      "customField": "plugin::field-nanoid.nanoid",
+      "options": {
+        "idLength": 10
+      }
+    }
+  }
+}

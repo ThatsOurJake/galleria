@@ -1,0 +1,44 @@
+<%- include('header') -%>
+<div class="glide" id="carousel">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <% data.Slide.forEach(({ Image: img, Caption: caption }) => { %>
+       <li class="glide__slide">
+          <div class="glide__item-wrapper">
+            <div class="glide__image-wrapper">
+              <img class="glide__image" src="<%= img.url %>" alt="<%= caption %>"></img>
+            </div>
+            <% if (caption) { %>
+              <div class="glide__image-caption">
+                <p><%= caption %></p>
+              </div>
+            <% } else { %>
+              <span></span>
+            <% } %>
+          </div>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+  <div class="glide__bullets" data-glide-el="controls[nav]">
+    <% for( let index = 0; index < data.Slide.length; index++ ) { %>
+      <button class="glide__bullet" data-glide-dir="=<%= index + 1 %>"></button>
+    <% } %>
+  </div>
+  <div class="glide__arrows" data-glide-el="controls">
+    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide@3.6.0/dist/glide.min.js" integrity="sha256-g3ppCcO2K1k7ISyQxKL2vMFul0JknSZfnwdMS0Ijw7g=" crossorigin="anonymous"></script>
+<script>
+  new Glide('.glide', {
+    type: 'carousel',
+    startAt: 0,
+    perView: 3,
+    focusAt: 'center',
+  }).mount();
+</script>
+<%- include('footer') -%>
+
+<!-- UUID: <%= data.uid %> -->

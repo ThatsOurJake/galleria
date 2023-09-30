@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_gallery_slides",
+  "info": {
+    "displayName": "Slide",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Caption": {
+      "type": "string"
+    }
+  }
+}
