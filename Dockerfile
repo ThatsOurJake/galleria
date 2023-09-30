@@ -4,6 +4,8 @@ RUN apk update && apk add --no-cache g++ make py3-pip build-base gcc autoconf au
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
 
+RUN npm i -g node-gyp
+
 WORKDIR /opt/
 COPY package.json yarn.lock ./
 RUN yarn config set network-timeout 600000 -g && yarn install --production
