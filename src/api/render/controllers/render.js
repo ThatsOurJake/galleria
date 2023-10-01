@@ -25,6 +25,7 @@ module.exports = {
 
       ctx.body = (await ejs.renderFile(path.resolve(__dirname, 'templates', 'iframe.ejs'), {
         data,
+        baseUrl: process.env.BASE_URL || '',
       }));
     } catch (err) {
       strapi.log.error(err);
