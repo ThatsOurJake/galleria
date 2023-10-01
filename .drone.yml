@@ -16,6 +16,7 @@ steps:
       - "${DRONE_COMMIT_SHA:0:8}"
     build_args:
       - ADMIN_URL=/galleria/admin
+      - STRAPI_ADMIN_BACKEND_URL=https://apps.jakeking.co.uk/galleria
   when:
     branch:
     - main

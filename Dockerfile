@@ -3,9 +3,11 @@ FROM node:18-alpine as build
 RUN apk update && apk add --no-cache g++ make py3-pip build-base gcc autoconf automake zlib-dev libpng-dev vips-dev > /dev/null 2>&1
 ARG NODE_ENV=production
 ARG ADMIN_URL=change_me
+ARG STRAPI_ADMIN_BACKEND_URL=change_me
 
 ENV NODE_ENV=${NODE_ENV}
 ENV ADMIN_URL=${ADMIN_URL}
+ENV STRAPI_ADMIN_BACKEND_URL=${STRAPI_ADMIN_BACKEND_URL}
 
 RUN npm i -g node-gyp
 
