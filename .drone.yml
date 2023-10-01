@@ -15,7 +15,7 @@ steps:
       - latest
       - "${DRONE_COMMIT_SHA:0:8}"
     build_args:
-      - ADMIN_URL="/galleria/admin"
+      - ADMIN_URL=/galleria/admin
   when:
     branch:
     - main
