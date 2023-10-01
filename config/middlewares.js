@@ -16,6 +16,7 @@ module.exports = [
         directives: {
           'connect-src': ["'self'", 'http:', 'https:'],
           'script-src': ["'self'", "https://cdn.jsdelivr.net", "'unsafe-inline'"],
+          'frame-ancestors': ["self", "http://localhost:8080", "https://thatsourjake.blog"],
           upgradeInsecureRequests: null,
         },
       },
